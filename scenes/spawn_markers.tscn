@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct5qwpk11c71i"]
+
+[ext_resource type="Script" path="res://scripts/spawn_markers.gd" id="1_xr2yw"]
+
+[node name="SpawnMarkers" type="Node2D"]
+script = ExtResource("1_xr2yw")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.166
+autostart = true
+
+[node name="Positions" type="Node" parent="."]
+
+[node name="Pos1" type="Marker2D" parent="Positions"]
+position = Vector2(1260, 146)
+
+[node name="Pos2" type="Marker2D" parent="Positions"]
+position = Vector2(1261, 236)
+
+[node name="Pos3" type="Marker2D" parent="Positions"]
+position = Vector2(1261, 318)
+
+[node name="Pos4" type="Marker2D" parent="Positions"]
+position = Vector2(1261, 424)
+
+[node name="Pos5" type="Marker2D" parent="Positions"]
+position = Vector2(1261, 520)
+
+[node name="Items" type="Node" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

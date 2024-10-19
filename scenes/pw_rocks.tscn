@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsixh0fqcxljs"]
+
+[ext_resource type="PackedScene" uid="uid://blmu632vgbyf2" path="res://scenes/player.tscn" id="1_4m7hn"]
+[ext_resource type="Script" path="res://scripts/pw_rocks.gd" id="1_7r2wj"]
+[ext_resource type="PackedScene" uid="uid://17qsvlowuxg" path="res://scenes/markers.tscn" id="2_7g6sa"]
+[ext_resource type="PackedScene" uid="uid://ct5qwpk11c71i" path="res://scenes/spawn_markers.tscn" id="3_mmydk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qieig"]
+size = Vector2(77, 654)
+
+[node name="PWRocks" type="Node2D"]
+script = ExtResource("1_7r2wj")
+
+[node name="Markers" parent="." instance=ExtResource("2_7g6sa")]
+
+[node name="SpawnMarkers" parent="." instance=ExtResource("3_mmydk")]
+
+[node name="Player" parent="." instance=ExtResource("1_4m7hn")]
+position = Vector2(90, 335)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-364, 334)
+shape = SubResource("RectangleShape2D_qieig")
+
+[connection signal="area_entered" from="Area2D" to="SpawnMarkers" method="_on_area_2d_area_entered"]

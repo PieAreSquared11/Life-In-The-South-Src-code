@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c37tqyqemh88u"]
+
+[ext_resource type="Texture2D" uid="uid://dqyubb8hpyakw" path="res://assets/rock.png" id="1_3gi0b"]
+[ext_resource type="Script" path="res://scripts/rock.gd" id="1_oek0w"]
+[ext_resource type="AudioStream" uid="uid://ctncsxotgklwy" path="res://assets/681677__pnmcarrierailfan__crash-shatter-06.mp3" id="3_o5lsu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b163a"]
+radius = 18.0
+
+[node name="Rock" type="Area2D"]
+script = ExtResource("1_oek0w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b163a")
+
+[node name="Rock" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, -1)
+scale = Vector2(4.1875, 4)
+texture = ExtResource("1_3gi0b")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_o5lsu")
+volume_db = -6.559
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

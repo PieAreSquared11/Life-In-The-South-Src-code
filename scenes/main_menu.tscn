@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://djswr7onlmc2p"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_jm0cm"]
+[ext_resource type="Texture2D" uid="uid://dgv0i2uq5tt1p" path="res://assets/cars/redcar/tile_0276.png" id="2_xegsl"]
+[ext_resource type="Texture2D" uid="uid://bynd3lmmojnx2" path="res://assets/cars/redcar/tile_0275.png" id="3_738f0"]
+[ext_resource type="AudioStream" uid="uid://5tcjkfvafo3c" path="res://assets/315808__volvion__8-bit-boss-appearance.wav" id="4_evr0m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v82r3"]
+bg_color = Color(0.341176, 0.701961, 0.117647, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yi5cl"]
+font_size = 64
+shadow_size = 16
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jm0cm")
+
+[node name="Panel" type="Panel" parent="."]
+z_index = 1000
+layout_mode = 0
+offset_right = 1165.0
+offset_bottom = 658.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v82r3")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 71.0
+offset_right = 874.0
+offset_bottom = 166.0
+text = "LIFE WHERE I LIVE"
+label_settings = SubResource("LabelSettings_yi5cl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 405.0
+offset_right = 535.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 32
+text = "PLAY GAME"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 614.0
+offset_top = 407.0
+offset_right = 852.0
+offset_bottom = 490.0
+theme_override_font_sizes/font_size = 32
+text = "CREDITS"
+
+[node name="Tile0276" type="Sprite2D" parent="Panel"]
+texture_filter = 1
+position = Vector2(542.5, 238.5)
+scale = Vector2(8.625, 8.625)
+texture = ExtResource("2_xegsl")
+flip_h = true
+
+[node name="Tile0275" type="Sprite2D" parent="Panel"]
+texture_filter = 1
+position = Vector2(610.5, 238.5)
+scale = Vector2(8.625, 8.625)
+texture = ExtResource("3_738f0")
+flip_h = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_evr0m")
+volume_db = 3.748
+pitch_scale = 0.96
+autoplay = true
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

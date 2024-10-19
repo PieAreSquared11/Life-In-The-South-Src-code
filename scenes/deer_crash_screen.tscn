@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://df1mm38oo87c1"]
+
+[ext_resource type="Script" path="res://scripts/deer_crash_screen.gd" id="1_jf828"]
+[ext_resource type="Texture2D" uid="uid://dgv0i2uq5tt1p" path="res://assets/cars/redcar/tile_0276.png" id="1_t7euo"]
+[ext_resource type="Texture2D" uid="uid://bynd3lmmojnx2" path="res://assets/cars/redcar/tile_0275.png" id="2_u8ofc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brrd5"]
+bg_color = Color(0.254902, 0.698039, 0.439216, 0.52549)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fax5m"]
+font_size = 64
+
+[node name="DeerCrashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jf828")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_brrd5")
+
+[node name="Node2D" type="Node2D" parent="Panel"]
+scale = Vector2(3, 3)
+
+[node name="Tile0276" type="Sprite2D" parent="Panel/Node2D"]
+texture_filter = 1
+position = Vector2(184.333, 72.6667)
+scale = Vector2(3, 3)
+texture = ExtResource("1_t7euo")
+flip_h = true
+
+[node name="Tile0275" type="Sprite2D" parent="Panel/Node2D"]
+texture_filter = 1
+position = Vector2(208.333, 72.6667)
+scale = Vector2(3, 3)
+texture = ExtResource("2_u8ofc")
+flip_h = true
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 43.0
+offset_right = 917.0
+offset_bottom = 160.0
+text = "YOU HIT A DEER!!!"
+label_settings = SubResource("LabelSettings_fax5m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 362.0
+offset_right = 512.0
+offset_bottom = 449.0
+theme_override_font_sizes/font_size = 32
+text = "RETRY"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 363.0
+offset_right = 839.0
+offset_bottom = 450.0
+theme_override_font_sizes/font_size = 32
+text = "QUIT"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]

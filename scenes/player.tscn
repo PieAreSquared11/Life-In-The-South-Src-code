@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://blmu632vgbyf2"]
+
+[ext_resource type="Texture2D" uid="uid://dgv0i2uq5tt1p" path="res://assets/cars/redcar/tile_0276.png" id="1_86pfb"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_hl8ch"]
+[ext_resource type="Texture2D" uid="uid://bynd3lmmojnx2" path="res://assets/cars/redcar/tile_0275.png" id="2_8r826"]
+[ext_resource type="AudioStream" uid="uid://ddd3r3ptejx0a" path="res://assets/159375__greenhourglass__8-bit-boing.wav" id="4_ri02t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlue1"]
+size = Vector2(27, 16)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_hl8ch")
+
+[node name="Tile0276" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-11.6667, -0.333333)
+scale = Vector2(3, 3)
+texture = ExtResource("1_86pfb")
+flip_h = true
+
+[node name="Tile0275" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(12.3333, -0.333333)
+scale = Vector2(3, 3)
+texture = ExtResource("2_8r826")
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(100, 0)
+limit_right = 14000
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xlue1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ri02t")
+volume_db = 0.987
+pitch_scale = 4.0

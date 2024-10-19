@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2fitgj7f382s"]
+
+[ext_resource type="Script" path="res://scripts/deer.gd" id="1_648p1"]
+[ext_resource type="Texture2D" uid="uid://djqhti1iqh8ja" path="res://assets/deer.png" id="1_f0tig"]
+[ext_resource type="AudioStream" uid="uid://ctncsxotgklwy" path="res://assets/681677__pnmcarrierailfan__crash-shatter-06.mp3" id="3_wbd0i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gncmh"]
+radius = 22.0
+height = 73.5391
+
+[node name="Deer" type="Area2D"]
+script = ExtResource("1_648p1")
+
+[node name="Deer" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_f0tig")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -5)
+rotation = 2.35619
+shape = SubResource("CapsuleShape2D_gncmh")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wbd0i")
+volume_db = -4.685
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

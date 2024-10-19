@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgafq2x17ffy6"]
+
+[ext_resource type="PackedScene" uid="uid://dsixh0fqcxljs" path="res://scenes/pw_rocks.tscn" id="1_lrtpn"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_u6s1l"]
+[ext_resource type="Texture2D" uid="uid://o18l3w4inplx" path="res://assets/grass.png" id="2_y2x1h"]
+[ext_resource type="PackedScene" uid="uid://cnt5om8jgxf7a" path="res://scenes/road.tscn" id="3_ba82g"]
+[ext_resource type="Texture2D" uid="uid://b6yo3iencq4aq" path="res://assets/race-line.png" id="5_nlqv8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_weq0q"]
+blend_mode = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrbgw"]
+size = Vector2(23, 153)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_u6s1l")
+
+[node name="PWRocks" parent="." instance=ExtResource("1_lrtpn")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_weq0q")
+offset_right = 1153.0
+offset_bottom = 641.0
+texture = ExtResource("2_y2x1h")
+stretch_mode = 1
+
+[node name="Road" parent="." instance=ExtResource("3_ba82g")]
+z_index = -50
+position = Vector2(-19, -562)
+scale = Vector2(2.99, 2.99)
+
+[node name="Road2" parent="." instance=ExtResource("3_ba82g")]
+z_index = -50
+position = Vector2(6947, -562)
+scale = Vector2(2.99, 2.99)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(14000, 0)
+scale = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-69.1667, 108.833)
+shape = SubResource("RectangleShape2D_yrbgw")
+
+[node name="TextureRect8" type="TextureRect" parent="Area2D"]
+z_index = -10
+texture_filter = 1
+offset_left = -81.0
+offset_top = 34.0
+offset_right = -57.0
+offset_bottom = 186.0
+scale = Vector2(1.1, 1)
+texture = ExtResource("5_nlqv8")
+stretch_mode = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

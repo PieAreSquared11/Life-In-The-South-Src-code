@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnt5om8jgxf7a"]
+
+[ext_resource type="Texture2D" uid="uid://b4ntvllqnhvjm" path="res://assets/road/mid-road.png" id="1_kcfb2"]
+[ext_resource type="Texture2D" uid="uid://cgowk2b5gj8s3" path="res://assets/road/road-side.png" id="2_cx8xi"]
+
+[node name="Road" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 3.0
+offset_top = 252.0
+offset_right = 2353.0
+offset_bottom = 284.0
+texture = ExtResource("1_kcfb2")
+stretch_mode = 1
+metadata/_edit_group_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 3.0
+offset_top = 283.0
+offset_right = 2353.0
+offset_bottom = 315.0
+texture = ExtResource("1_kcfb2")
+stretch_mode = 1
+metadata/_edit_group_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 3.0
+offset_top = 314.0
+offset_right = 2353.0
+offset_bottom = 346.0
+texture = ExtResource("1_kcfb2")
+stretch_mode = 1
+metadata/_edit_group_ = true
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 3.0
+offset_top = 345.0
+offset_right = 2353.0
+offset_bottom = 377.0
+texture = ExtResource("1_kcfb2")
+stretch_mode = 1
+metadata/_edit_group_ = true
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 3.0
+offset_top = 221.0
+offset_right = 2353.0
+offset_bottom = 253.0
+texture = ExtResource("1_kcfb2")
+stretch_mode = 1
+metadata/_edit_group_ = true
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+z_index = 1
+texture_filter = 1
+offset_left = 3.0
+offset_top = 192.0
+offset_right = 2353.0
+offset_bottom = 224.0
+texture = ExtResource("2_cx8xi")
+stretch_mode = 1
+metadata/_edit_group_ = true
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+z_index = 1
+texture_filter = 1
+offset_left = 3.0
+offset_top = 374.0
+offset_right = 2353.0
+offset_bottom = 406.0
+texture = ExtResource("2_cx8xi")
+stretch_mode = 1
+flip_v = true
+metadata/_edit_group_ = true
