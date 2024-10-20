@@ -6,9 +6,9 @@ Welcome to **Life Where I Live**, a thrilling Godot game where you navigate your
 ## Features
 
 - W and S keys for up and down movement
-- credits
-- end screen
-- completely modifiable
+- Credits
+- End screen
+- Completely modifiable
 
 ## Installation
 
