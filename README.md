@@ -1,6 +1,6 @@
-# Life Where I Live
+# Life In The South
 
-Welcome to **Life Where I Live**, a thrilling Godot game where you navigate your car through a countryside filled with rocks and deer. Your goal is to avoid obstacles and survive as long as possible while enjoying the scenic landscape!
+Welcome to **Life In The South**, a thrilling Godot game where you navigate your car through a countryside filled with rocks and deer. Your goal is to avoid obstacles and survive as long as possible while enjoying the scenic landscape!
 
 
 ## Features
@@ -12,7 +12,7 @@ Welcome to **Life Where I Live**, a thrilling Godot game where you navigate your
 
 ## Installation
 
-To download and install the **Life Where I Live** source code:
+To download and install the **Life In The South** source code:
 
 1. Clone the repository:
    ```bash
